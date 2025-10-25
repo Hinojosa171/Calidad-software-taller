@@ -25,6 +25,9 @@ jobs:
     - name: Run tests and coverage
       run: npm run test:coverage
       
+    - name: Fix permissions for node_modules
+      run: chmod -R +x node_modules/.bin
+      
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
